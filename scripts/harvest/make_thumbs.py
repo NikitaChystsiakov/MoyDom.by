@@ -32,6 +32,7 @@ for p in json.load(open(ROOT / "data/projects.json", encoding="utf8")):
         plans += 1
 
 Image.open(PUB / "hero.jpg").convert("RGB").save(PUB / "hero.webp", quality=68, method=6)
+fit(Image.open(PUB / "big/proect-doma-1244.jpg").convert("RGB"), 1400).save(PUB / "ask.webp", quality=66, method=6)
 por = Image.open(PUB / "koleskov.png").convert("RGBA")
 fit(por, 192).save(PUB / "koleskov.webp", quality=82, method=6)
 print(cards, "карточек,", plans, "планов")

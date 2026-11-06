@@ -91,10 +91,10 @@ export default function ProjectView({ p: base, similar }: { p: Project; similar:
         <div className="ask-in">
           <div>
             <h2>{ordered ? `Заказать проект ${p.no}` : "Спросить про этот дом"}</h2>
-            {ordered ? <p>Вы выбрали: <b>{choice}</b>. Алексей перезвонит и уточнит детали.</p> : <p>Алексей подскажет, подходит ли {p.title.toLowerCase().replace("проект дома", "проект")} под ваш участок и что можно изменить.</p>}
+            {ordered ? <p>Вы выбрали: <b>{choice}</b>. Перезвоним и уточним детали.</p> : <p>Подскажем, подходит ли {p.title.toLowerCase().replace("проект дома", "проект")} под ваш участок и что можно изменить.</p>}
             <Author />
           </div>
-          <LeadForm phrase={`${p.title}, ${choice}`} params="" project={p.slug} cta="Отправить Алексею" />
+          <LeadForm phrase={`${p.title}, ${choice}`} params="" project={p.slug} cta="Отправить заявку" />
         </div>
       </section>
       <Foot />

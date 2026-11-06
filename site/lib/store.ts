@@ -30,7 +30,7 @@ export function setOverride(slug: string, o: Override) {
 }
 const PLOT: Record<string, string> = { "Есть": "участок есть", "Выбираю": "участок выбирает", "Пока нет": "участка пока нет" };
 const START: Record<string, string> = { "До 3 месяцев": "начать в ближайшие 3 месяца", "В течение года": "начать в течение года", "Присматриваюсь": "пока присматривается" };
-/** Необязательные ответы из формы одной строкой для экрана Алексея */
+/** Необязательные ответы из формы одной строкой для админ-панели */
 export function leadDetails(l: Lead) {
   const plot = l.plot ? [PLOT[l.plot] ?? l.plot, l.place, l.size ? `${l.size} сот.` : ""].filter(Boolean).join(", ") : "";
   return [l.contact ? `связь: ${l.contact}` : "", plot, l.start ? START[l.start] ?? l.start : ""].filter(Boolean).join(" · ");

@@ -9,7 +9,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
     <div className="ad">
       <div className="ad-top">
         <Link href="/proekty" className="logo" aria-label="На сайт"><img src="/logo.png" alt="МойДом.BY" width={150} height={38} /></Link>
-        <nav aria-label="Экран Алексея">
+        <nav aria-label="Админ-панель">
           {tab("/admin", "Что искали", path === "/admin")}
           {tab("/admin/proekty", "Проекты", path.startsWith("/admin/proekty"))}
         </nav>

@@ -19,7 +19,7 @@ function Pick({ label, options, value, onChange }: { label: string; options: str
   );
 }
 
-export default function LeadForm({ phrase, params, project, cta = "Отправить Алексею" }: { phrase: string; params: string; project?: string; cta?: string }) {
+export default function LeadForm({ phrase, params, project, cta = "Отправить заявку" }: { phrase: string; params: string; project?: string; cta?: string }) {
   const [name, setName] = useState(""); const [phone, setPhone] = useState(""); const [comment, setComment] = useState("");
   const [contact, setContact] = useState(""); const [plot, setPlot] = useState(""); const [place, setPlace] = useState(""); const [size, setSize] = useState(""); const [start, setStart] = useState("");
   const [err, setErr] = useState(""); const [sent, setSent] = useState(false);
@@ -27,14 +27,14 @@ export default function LeadForm({ phrase, params, project, cta = "Отправ�
   if (sent) return (
     <div className="lead-done" role="status">
       <h3>Заявка отправлена</h3>
-      <p>Алексей увидит ваш запрос вместе с параметрами и перезвонит.</p>
-      <Link className="btn btn-ghost" href="/admin">Открыть экран Алексея</Link>
+      <p>Мы получили ваш запрос вместе с параметрами и перезвоним.</p>
+      <Link className="btn btn-ghost" href="/admin">Открыть админ-панель</Link>
     </div>
   );
   return (
     <form className="lead" noValidate onSubmit={(e) => {
       e.preventDefault();
-      if (phone.replace(/\D/g, "").length < 7) { setErr("Укажите телефон, чтобы Алексей мог перезвонить"); return; }
+      if (phone.replace(/\D/g, "").length < 7) { setErr("Укажите телефон, чтобы мы могли перезвонить"); return; }
       addLead({ name, phone, comment, phrase, params, project, contact, plot, place: plot === "Есть" ? place : "", size: plot === "Есть" ? size : "", start }); setSent(true);
     }}>
       <label>Как к вам обращаться<input value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" /></label>
@@ -55,7 +55,7 @@ export default function LeadForm({ phrase, params, project, cta = "Отправ�
       <label className="lead-wide">Что ещё важно<textarea rows={2} value={comment} onChange={(e) => setComment(e.target.value)} placeholder={project ? "Что изменить в проекте, бюджет" : "Бюджет, состав семьи, пожелания"} /></label>
       {err && <p className="err lead-wide" role="alert">{err}</p>}
       <button className="btn btn-led lead-wide" type="submit">{cta}</button>
-      <p className="lead-note lead-wide">Обязателен только телефон. Остальное поможет Алексею подготовиться к разговору.</p>
+      <p className="lead-note lead-wide">Обязателен только телефон. Остальное поможет нам подготовиться к разговору.</p>
     </form>
   );
 }

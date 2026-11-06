@@ -12,7 +12,7 @@ export default function Foot() {
           <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
         </div>
       </footer>
-      <Link className="demo-tag" href="/admin">Демо: экран Алексея</Link>
+      <Link className="demo-tag" href="/admin">Админ-панель</Link>
     </>
   );
 }

@@ -55,7 +55,7 @@ export default function Header() {
                 <a href={`tel:${PHONE2.tel}`}><b className="nums">{PHONE2.text}</b></a>
                 <div className="msg">{MESSENGERS.map((m) => <a key={m.label} href={m.href}>{m.label}</a>)}</div>
                 <hr />
-                <Link href="/admin" onClick={() => setOpen(false)}>Демо: экран Алексея</Link>
+                <Link href="/admin" onClick={() => setOpen(false)}>Админ-панель</Link>
               </div>
             </motion.aside>
           </>

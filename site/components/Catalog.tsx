@@ -135,7 +135,7 @@ export default function Catalog({ cards, preset, title }: { cards: Card[]; prese
                 </span>
               )}
             </h1>
-            {empty && <p className="hero-sub"><span>{all.length} проектов домов с планами от архитектора Алексея Колескова</span><span>Выберите условия, и дом дорисуется</span></p>}
+            {empty && <p className="hero-sub"><span>Архитектор Алексей Колесков, {all.length} {plural(all.length)} домов с планами</span><span>Выберите условия, и дом дорисуется</span></p>}
           </div>
           <div className="hero-sketch"><p>Эскиз вашего запроса</p><HouseSketch q={q} bold /></div>
         </div>
@@ -193,7 +193,7 @@ export default function Catalog({ cards, preset, title }: { cards: Card[]; prese
           <section className="none night" aria-live="polite">
             <div className="none-copy">
               <h2>Такого дома в каталоге пока нет</h2>
-              <p>Алексей Колесков проектирует дома и под запрос. Условия уже в заявке, осталось оставить телефон.</p>
+              <p>Спроектируем такой дом под ваш запрос. Условия уже в заявке, осталось оставить телефон.</p>
               {hints.length > 0 && (
                 <div className="hints">
                   {hints.map((h) => (
@@ -207,7 +207,7 @@ export default function Catalog({ cards, preset, title }: { cards: Card[]; prese
             <div className="none-form day" ref={formRef}>
               <Author />
               <p className="req">{text}</p>
-              <LeadForm phrase={text} params={params} cta="Отправить запрос Алексею" />
+              <LeadForm phrase={text} params={params} cta="Отправить запрос" />
             </div>
           </section>
         )}
@@ -226,7 +226,7 @@ export default function Catalog({ cards, preset, title }: { cards: Card[]; prese
           <div className="ask-in">
             <div>
               <h2>Не нашли свой дом?</h2>
-              <p>{empty ? "Опишите, что ищете, и Алексей Колесков подскажет готовый проект или спроектирует новый." : <>Ваш запрос уже здесь: <b>{text.toLowerCase()}</b>. Алексей подскажет готовый проект или спроектирует новый.</>}</p>
+              <p>{empty ? "Опишите, что ищете, и мы подскажем готовый проект или спроектируем новый." : <>Ваш запрос уже здесь: <b>{text.toLowerCase()}</b>. Подскажем готовый проект или спроектируем новый.</>}</p>
               <Author />
             </div>
             <LeadForm phrase={empty ? "Без условий" : text} params={params} />
